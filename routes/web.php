@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/master', function () {
     return view('adminapp.master');
 });
 
@@ -21,3 +22,4 @@ Route::get('/dashboard ', function () {
     return view('admindashboard');
 });
 
+Route::get('products', [ProductsController::class, 'index']);
